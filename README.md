@@ -73,9 +73,8 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **Uses local storage**
+- **Uses Webpack**
 - **Based on latest ES6 syntax**
-- **Consists use of ES6 modules and it's methods**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

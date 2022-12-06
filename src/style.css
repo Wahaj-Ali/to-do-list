@@ -1,0 +1,69 @@
+body {
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 20px;
+  width: 305px;
+  justify-content: space-between;
+}
+
+.heading h1 {
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.tasks {
+  width: 325px;
+}
+
+.item {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 20px;
+  margin-bottom: 1px;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  gap: 10%;
+}
+
+.item label {
+  width: 325px;
+}
+
+.list-head input {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 20px;
+  width: 305px;
+  border: none;
+}
+
+.clear button {
+  border: none;
+  width: 325px;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 15px;
+  box-shadow: 0 2px 20px;
+}
+
+.itme-desc {
+  width: 267px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

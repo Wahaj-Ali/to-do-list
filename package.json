@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wahaj-Ali/Webpack-Setup.git"
+    "url": "git+https://github.com/Wahaj-Ali/To-do-list.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Wahaj-Ali/Webpack-Setup/issues"
+    "url": "https://github.com/Wahaj-Ali/To-do-listp/issues"
   },
-  "homepage": "https://github.com/Wahaj-Ali/Webpack-Setup#readme",
+  "homepage": "https://github.com/Wahaj-Ali/To-do-list#readme",
   "devDependencies": {
     "css-loader": "^6.7.2",
     "express": "^4.18.2",

@@ -1,4 +1,7 @@
-import _ from 'lodash'; // eslint-disable-next-line no-use-before-define
+/* eslint-disable */
+import _ from 'lodash'; 
+
+/* eslint-enable */
 import './style.css';
 
 const simpleTasks = [

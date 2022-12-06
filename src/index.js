@@ -1,35 +1,24 @@
-import _ from 'lodash';
+import _ from 'lodash'; // eslint-disable-next-line no-use-before-define
 import './style.css';
-
-// function component() {
-//     const element = document.createElement('div');
-  
-//     // Lodash, now imported by this script
-//     element.innerHTML = _.join(['Hello', 'Webpack'], ' ');
-//     element.classList.add('body');
-  
-//     return element;
-//   }
-  
-//   document.body.appendChild(component());
 
 const simpleTasks = [
   {
-    description : "Complete the structure of To-do-list",
-    completed : false,
-    index : 1,
+    description: 'Complete the structure of To-do-list',
+    completed: false,
+    index: 1,
   },
   {
-    description : "Complete setting up webpack",
-    completed : true,
-    index : 2,
+    description: 'Complete setting up webpack',
+    completed: true,
+    index: 2,
   },
   {
-    description : "Complete the all pending tasks. Also complete other pending tasks. Make sure ton complete on time. Also define what you did",
-    completed : false,
-    index : 3,
+    description: 'Complete the all pending tasks. Also complete other pending tasks. Make sure ton complete on time. Also define what you did',
+    completed: false,
+    index: 3,
   },
-]
+];
+
 function displayTasks() {
   let result = '';
   simpleTasks.filter((task) => task.index > 0).forEach((task) => {

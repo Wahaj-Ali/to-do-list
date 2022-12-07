@@ -35,7 +35,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 To Do list ](#-to-do-list-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -77,6 +77,10 @@ After you're finished please remove all the comments and instructions!
 
 - **Uses Webpack**
 - **Based on latest ES6 syntax**
+- **Contains functions to add, remove, modify tasks**
+- **Stores tasks in local storage**
+- **On page load gets tasks from local storage**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

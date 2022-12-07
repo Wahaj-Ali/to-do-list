@@ -110,7 +110,9 @@ const displayTasks = () => {
         if (e.key === 'Enter') {
           displayTasks();
         } else {
-          todo.editTask(e.target, index);
+          /* eslint-disable */
+          todo.editTask(e.target, a.index);
+          /* eslint-enable */
         }
       }
     });

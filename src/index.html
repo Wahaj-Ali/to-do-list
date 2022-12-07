@@ -11,19 +11,23 @@
     <title>To Do List</title>
   </head>
   <body>
-    <div class="heading">
-      <h1>Today's To do</h1>
-      <i class="fa-solid fa-arrows-rotate"></i>
-    </div>
-    <div class="todo-list">
-      <div class="list-head">
-        <input type="text" placeholder="Add to your list" />
-      </div>
+    <div>
+      <ul class="todo-list">
+        <li class="heading">
+          <h1>Today's To do</h1>
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </li>
 
-      <div class="tasks"></div>
-      <div class="clear">
-        <button>Clear all completed</button>
-      </div>
+        <li class="add-task">
+          <form class="list-head" action="#" id="form">
+            <input id="task-info" type="text" placeholder="Add to your list" />
+          </form>
+        </li>
+        <li class="tasks"></li>
+        <li class="clear">
+          <button id="clear-btn">Clear all completed</button>
+        </li>
+      </ul>
     </div>
   </body>
 </html>

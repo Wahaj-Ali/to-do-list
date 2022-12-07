@@ -25,8 +25,24 @@ li {
   font-size: 20px;
 }
 
-.tasks {
+.tasklist {
   width: 325px;
+}
+
+#tasks {
+  list-style: none;
+  padding: 0;
+}
+
+#taskchk {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+#taskdiv {
+  display: flex;
+  justify-content: space-between;
 }
 
 .item {
@@ -38,10 +54,15 @@ li {
   justify-content: flex-start;
   display: flex;
   gap: 10%;
+  flex-direction: column;
 }
 
 .item label {
   width: 325px;
+}
+
+.list-head {
+  display: flex;
 }
 
 .list-head input {
@@ -50,6 +71,11 @@ li {
   box-shadow: 0 2px 20px;
   width: 305px;
   border: none;
+}
+
+.list-head button {
+  position: absolute;
+  display: none;
 }
 
 .clear button {
@@ -65,5 +91,10 @@ li {
   width: 267px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.task-div {
+  display: flex;
   gap: 6px;
 }

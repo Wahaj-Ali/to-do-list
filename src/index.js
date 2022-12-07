@@ -61,7 +61,7 @@ const todo = new listTask();
 const listSection = document.querySelector('.tasks');
 const form = document.getElementById('form');
 
-//show tasks
+//  show tasks
 
 const displayTasks = () => {
   listSection.replaceChildren();
@@ -110,7 +110,7 @@ const displayTasks = () => {
         if (e.key === 'Enter') {
           displayTasks();
         } else {
-          todo.editTask(e.target, a.index);
+          todo.editTask(e.target, index);
         }
       }
     });
@@ -118,7 +118,7 @@ const displayTasks = () => {
   }
 };
 
-//add a task
+//  add a task
 
 const getAddedTodos = () => {
   const newTodo = document.getElementById('task-info');
@@ -131,7 +131,7 @@ const getAddedTodos = () => {
 };
 form.addEventListener('submit', getAddedTodos);
 
-//delete a task
+//  delete a task
 
 const delTask = (index) => {
   todo.deleteTask(index);
@@ -145,7 +145,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-//get tasks from localstorage
+//  get tasks from localstorage
 
 const populate = () => {
   if (localStorage.getItem('tasks')) {

@@ -1,8 +1,8 @@
 /* eslint-disable */
-import _, { indexOf } from 'lodash'; 
+import _, { indexOf } from "lodash";
 
 /* eslint-enable */
-import './style.css';
+import "./style.css";
 
 class listTask {
   allTasks = [];
@@ -18,7 +18,7 @@ class listTask {
   }
 
   deleteTask(index) {
-    this.allTasks.splice(index-1 , 1);
+    this.allTasks.splice(index - 1, 1);
     this.updateIndex();
     this.saveTask();
   }
@@ -32,13 +32,11 @@ class listTask {
 
   saveTask() {
     const tasks = JSON.stringify(this.allTasks);
-    localStorage.setItem('tasks', tasks);
+    localStorage.setItem("tasks", tasks);
   }
 
   getStoredTodos() {
-    this.allTasks = JSON.parse(
-      localStorage.getItem('tasks'),
-    );
+    this.allTasks = JSON.parse(localStorage.getItem("tasks"));
   }
 
   completedTask(status, index) {
@@ -52,60 +50,64 @@ class listTask {
   }
 
   getStoredTasks() {
-    this.allTasks = JSON.parse(
-      localStorage.getItem('tasks'),
-    );
+    this.allTasks = JSON.parse(localStorage.getItem("tasks"));
   }
 }
 
+/* eslint-disable */
 const todo = new listTask();
-const listSection = document.querySelector('.tasks');
-const form = document.getElementById('form');
+/* eslint-enable */
+
+const listSection = document.querySelector(".tasks");
+const form = document.getElementById("form");
 
 //show tasks
+
 const displayTasks = () => {
   listSection.replaceChildren();
   if (todo.allTasks.length > 0) {
-    listSection.style.display = 'block';
-    const listContainer = document.createElement('ul');
-    listContainer.className = 'item';
+    listSection.style.display = "block";
+    const listContainer = document.createElement("ul");
+    listContainer.className = "item";
     listSection.appendChild(listContainer);
     todo.allTasks.map((a) => {
-      const list = document.createElement('li');
-      list.className = 'itme-desc';
+      const list = document.createElement("li");
+      list.className = "itme-desc";
 
-      const descrptContainer = document.createElement('div');
-      descrptContainer.className = 'task-div';
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.id = 'checkbox';
-      if (a.completed === true) { checkbox.checked = 'checked'; }
+      const descrptContainer = document.createElement("div");
+      descrptContainer.className = "task-div";
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.id = "checkbox";
+      if (a.completed === true) {
+        checkbox.checked = "checked";
+      }
 
       checkbox.onclick = (e) => {
         todo.completedTask(e.target.checked, a.index);
       };
       descrptContainer.appendChild(checkbox);
 
-      const descrpt = document.createElement('p');
-      descrpt.id = 'taskLabel';
+      const descrpt = document.createElement("p");
+      descrpt.id = "taskLabel";
       descrpt.textContent = a.description;
       descrptContainer.appendChild(descrpt);
       list.appendChild(descrptContainer);
 
-      const deleteIcon = document.createElement('i');
-      deleteIcon.className = 'fa-solid fa-xmark';
+      const deleteIcon = document.createElement("i");
+      deleteIcon.className = "fa-solid fa-xmark";
       deleteIcon.id = a.index;
       list.appendChild(deleteIcon);
 
       list.onclick = () => {
-        descrpt.contentEditable = 'true';
+        descrpt.contentEditable = "true";
       };
       listContainer.append(list);
       return list;
     });
-    document.createElement('p').addEventListener('keyup', (e) => {
-      if (e.target.id === 'task-description') {
-        if (e.key === 'Enter') {
+    document.createElement("p").addEventListener("keyup", (e) => {
+      if (e.target.id === "task-description") {
+        if (e.key === "Enter") {
           displayTasks();
         } else {
           todo.editTask(e.target, a.index);
@@ -117,26 +119,28 @@ const displayTasks = () => {
 };
 
 //add a task
+
 const getAddedTodos = () => {
-  const newTodo = document.getElementById('task-info');
+  const newTodo = document.getElementById("task-info");
   const description = newTodo.value;
-  if (description !== '') {
+  if (description !== "") {
     todo.addTask(description);
     displayTasks();
-    newTodo.value = '';
+    newTodo.value = "";
   }
 };
-form.addEventListener('submit', getAddedTodos);
+form.addEventListener("submit", getAddedTodos);
 
 //delete a task
- const delTask = (index) => {
+
+const delTask = (index) => {
   todo.deleteTask(index);
   todo.saveTask();
   displayTasks();
 };
 
-document.addEventListener('click', (e) => {
-  if (e.target.className === 'fa-solid fa-xmark') {
+document.addEventListener("click", (e) => {
+  if (e.target.className === "fa-solid fa-xmark") {
     delTask(e.target.id);
   }
 });
@@ -144,7 +148,7 @@ document.addEventListener('click', (e) => {
 //get tasks from localstorage
 
 const populate = () => {
-  if (localStorage.getItem('tasks')) {
+  if (localStorage.getItem("tasks")) {
     todo.getStoredTasks();
     displayTasks();
   } else {
@@ -153,6 +157,3 @@ const populate = () => {
 };
 
 populate();
-
-
-

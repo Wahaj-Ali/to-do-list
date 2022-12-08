@@ -1,9 +1,8 @@
 import './style.css';
-import { displayTasks, todo } from './modules/displaytasks.js';
 import delTask from './modules/deltask.js';
-import getAddedTodos from './modules/newtask';
-import populate from './modules/populate';
-import clearCompletedTasks from './modules/clearCompletedTasks';
+import getAddedTodos from './modules/newtask.js';
+import populate from './modules/populate.js';
+import clearCompletedTasks from './modules/clearCompletedTasks.js';
 
 /* eslint-disable */
 import _, { indexOf } from 'lodash';

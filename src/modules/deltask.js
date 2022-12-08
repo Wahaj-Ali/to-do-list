@@ -1,4 +1,4 @@
-import { displayTasks, todo } from './displaytasks';
+import { displayTasks, todo } from './displaytasks.js';
 
 const delTask = (index) => {
   todo.deleteTask(index);

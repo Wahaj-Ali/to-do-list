@@ -1,4 +1,4 @@
-import { displayTasks, todo } from './displaytasks';
+import { displayTasks, todo } from './displaytasks.js';
 
 const getAddedTodos = () => {
   const newTodo = document.getElementById('task-info');

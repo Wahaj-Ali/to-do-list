@@ -56,7 +56,7 @@ const displayTasks = () => {
       return list;
     });
     document.createElement('p').addEventListener('keyup', (e) => {
-      if (e.target.id === 'task-description') {
+      if (e.target.id === 'taskLabel') {
         if (e.key === 'Enter') {
           displayTasks();
         } else {

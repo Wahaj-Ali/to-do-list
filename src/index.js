@@ -4,11 +4,6 @@ import getAddedTodos from './modules/newtask.js';
 import populate from './modules/populate.js';
 import clearCompletedTasks from './modules/clearCompletedTasks.js';
 
-/* eslint-disable */
-// import _, { indexOf } from 'lodash';
-
-/* eslint-enable */
-
 const form = document.getElementById('form');
 
 //  add a task

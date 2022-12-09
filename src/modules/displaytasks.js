@@ -38,6 +38,12 @@ const displayTasks = () => {
       descrptContainer.appendChild(descrpt);
       list.appendChild(descrptContainer);
 
+      descrpt.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+          todo.editTask(descrpt, a.index);
+        }
+      });
+
       const deleteIcon = document.createElement('i');
       deleteIcon.className = 'fa-solid fa-xmark';
       deleteIcon.id = a.index;

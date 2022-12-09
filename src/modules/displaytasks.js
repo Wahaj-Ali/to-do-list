@@ -1,4 +1,4 @@
-import { listTask } from './listTask.js';
+import listTask from './listTask';
 
 /* eslint-disable */
 const todo = new listTask();

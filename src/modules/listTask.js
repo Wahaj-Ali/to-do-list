@@ -1,4 +1,4 @@
-class listTask {
+export default class listTask {
   allTasks = [];
 
   saveTask() {
@@ -49,5 +49,3 @@ class listTask {
     });
   }
 }
-
-export { listTask };

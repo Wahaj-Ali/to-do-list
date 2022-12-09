@@ -1,4 +1,5 @@
-import listTask from './listTask.js';
+import { listTask } from './listTask.js';
+
 /* eslint-disable */
 const todo = new listTask();
 /* eslint-enable */
@@ -45,12 +46,18 @@ const displayTasks = () => {
 
       list.onclick = () => {
         descrpt.contentEditable = 'true';
+        // todo.editTask(descrpt, a.index);
       };
+      descrpt.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+          todo.editTask(descrpt, a.index);
+        }
+      });
       listContainer.append(list);
       return list;
     });
     document.createElement('p').addEventListener('keyup', (e) => {
-      if (e.target.id === 'task-description') {
+      if (e.target === 'taskLabel') {
         if (e.key === 'Enter') {
           displayTasks();
         } else {

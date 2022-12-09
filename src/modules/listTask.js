@@ -1,5 +1,10 @@
-export default class listTask {
+class listTask {
   allTasks = [];
+
+  saveTask() {
+    const tasks = JSON.stringify(this.allTasks);
+    localStorage.setItem('tasks', tasks);
+  }
 
   addTask(description) {
     const task = {
@@ -17,25 +22,8 @@ export default class listTask {
     this.saveTask();
   }
 
-  updateIndex() {
-    this.allTasks.map((a) => {
-      a.index = this.allTasks.indexOf(a) + 1;
-      return a;
-    });
-  }
-
-  saveTask() {
-    const tasks = JSON.stringify(this.allTasks);
-    localStorage.setItem('tasks', tasks);
-  }
-
-  getStoredTodos() {
+  getStoredTasks() {
     this.allTasks = JSON.parse(localStorage.getItem('tasks'));
-  }
-
-  completedTask(status, index) {
-    this.allTasks[index - 1].completed = status;
-    this.saveTask();
   }
 
   editTask(paragraph, index) {
@@ -43,8 +31,9 @@ export default class listTask {
     this.saveTask();
   }
 
-  getStoredTasks() {
-    this.allTasks = JSON.parse(localStorage.getItem('tasks'));
+  completedTask(status, index) {
+    this.allTasks[index - 1].completed = status;
+    this.saveTask();
   }
 
   clearCompleted() {
@@ -52,4 +41,13 @@ export default class listTask {
     this.updateIndex();
     this.saveTask();
   }
+
+  updateIndex() {
+    this.allTasks.map((a) => {
+      a.index = this.allTasks.indexOf(a) + 1;
+      return a;
+    });
+  }
 }
+
+export { listTask };

@@ -5,7 +5,7 @@ import populate from './modules/populate.js';
 import clearCompletedTasks from './modules/clearCompletedTasks.js';
 
 /* eslint-disable */
-import _, { indexOf } from 'lodash';
+// import _, { indexOf } from 'lodash';
 
 /* eslint-enable */
 
@@ -14,7 +14,6 @@ const form = document.getElementById('form');
 //  add a task
 
 form.addEventListener('submit', getAddedTodos);
-
 //  delete a task
 
 document.addEventListener('click', (e) => {
@@ -27,8 +26,8 @@ document.addEventListener('click', (e) => {
 
 populate();
 
-const clearTasks = document.getElementById('clear-btn');
-
 // Clear completed tasks
-
+const clearTasks = document.getElementById('clear-btn');
 clearTasks.addEventListener('click', clearCompletedTasks);
+
+// edit task

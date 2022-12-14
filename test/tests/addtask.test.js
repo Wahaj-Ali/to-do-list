@@ -34,7 +34,18 @@ describe('This test', () => {
         ).toEqual('itme-desc');
       });
 
-    test('adds the exact number of task elements to the list container ', () => {
+    
+      test('should remove 1st task in the list container', () => {
+        todo.allTasks = [];
+        createMockDocument('task1');
+
+        const listSection = document.querySelector('.tasks');
+        getAddedTodos();
+        delTask(1);
+        expect(listSection.children.length).toEqual(0);
+      });
+      
+      test('adds the exact number of task elements to the list container ', () => {
         todo.allTasks = [];
         createMockDocument('task1');
         // global.localStorage.clear();
@@ -51,13 +62,4 @@ describe('This test', () => {
           3,
         );
       });
-      test('should remove 1st task in the list container', () => {
-        todo.allTasks = [];
-        createMockDocument('task1');
-
-        const listSection = document.querySelector('.tasks');
-        getAddedTodos();
-        delTask(1);
-        expect(listSection.children.length).toEqual(0);
-    });
 });

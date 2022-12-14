@@ -3,11 +3,12 @@ import listTask from './listTask.js';
 const todo = new listTask();
 /* eslint-enable */
 
-const listSection = document.querySelector('.tasks');
+// const listSection = document.querySelector('.tasks');
 
 //  show tasks
 
 const displayTasks = () => {
+  const listSection = document.querySelector('.tasks');
   listSection.replaceChildren();
   if (todo.allTasks.length > 0) {
     listSection.style.display = 'block';

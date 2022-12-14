@@ -45,7 +45,6 @@ describe('This test', () => {
   test('adds the exact number of task elements to the list container ', () => {
     todo.allTasks = [];
     createMockDocument('task1');
-  
     const listSection = document.querySelector('.tasks');
     const newTodo = document.getElementById('task-info');
 

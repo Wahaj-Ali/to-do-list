@@ -3,7 +3,7 @@ import listTask from './listTask.js';
 const todo = new listTask();
 /* eslint-enable */
 
-const listSection = document.querySelector('.tasks');
+// const listSection = document.querySelector('.tasks');
 
 //  show tasks
 

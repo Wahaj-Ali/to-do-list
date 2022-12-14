@@ -1,8 +1,7 @@
 import getAddedTodos from '../../src/modules/newtask.js';
 import { todo } from '../../src/modules/displaytasks.js';
 import createMockDocument from '../mocks/mockDocument.js';
-import delTask from "../../src/modules/deltask";
-
+import delTask from '../../src/modules/deltask.js';
 
 function addTaskDescription(val, input) {
   input.value = val;

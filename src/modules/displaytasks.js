@@ -8,6 +8,7 @@ const listSection = document.querySelector('.tasks');
 //  show tasks
 
 const displayTasks = () => {
+  const listSection = document.querySelector('.tasks');
   listSection.replaceChildren();
   if (todo.allTasks.length > 0) {
     listSection.style.display = 'block';

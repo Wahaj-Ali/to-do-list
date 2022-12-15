@@ -95,4 +95,22 @@ describe('This test', () => {
     todo.completedTask(checkbox.checked, checkAtIndex);
     expect(todo.allTasks[checkAtIndex-1].completed).toEqual(checkbox.checked);
   });
+
+  test('clears completed tasks', () => {
+    todo.allTasks = [];
+    createMockDocument('task1');
+    const listSection = document.querySelector('.tasks');
+    const newTodo = document.getElementById('task-info');
+    getAddedTodos();
+    addTaskDescription('task2', newTodo);
+    getAddedTodos();
+    addTaskDescription('task3', newTodo);
+    getAddedTodos();
+    const clearatIndex = 1;
+    const completedTask = listSection.querySelector('.item').querySelector('.itme-desc').querySelector('#checkbox');
+    completedTask.checked = true;
+    todo.completedTask(completedTask.checked, clearatIndex);
+    clearCompletedTasks();
+    expect(todo.allTasks.length).toEqual(2);
+  });
 });

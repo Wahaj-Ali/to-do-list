@@ -57,4 +57,41 @@ describe('This test', () => {
       3,
     );
   });
+
+  test('edits the 1st task description', () => {
+    todo.allTasks = [];
+    createMockDocument('task1');
+    const listSection = document.querySelector('.tasks');
+    const newTodo = document.getElementById('task-info');
+    getAddedTodos();
+    addTaskDescription('task2', newTodo);
+    getAddedTodos();
+    addTaskDescription('task3', newTodo);
+    getAddedTodos();
+    const completedTaskIndex = 1;
+    const newDesc = 'task1 edited';
+    // const descContainer = document.querySelector('#taskLabel');
+    // const para = listSection.children[0].children[completedTaskIndex].querySelector('#taskLabel');
+    const para1 = listSection.children[0].children[completedTaskIndex].children[0].children[1];
+    para1.textContent = newDesc;
+    todo.editTask(para1, completedTaskIndex);
+    expect(todo.allTasks[completedTaskIndex-1].description).toEqual(newDesc);
+  });
+
+  test('checks given item status', () => {
+    todo.allTasks = [];
+    createMockDocument('task1');
+    const listSection = document.querySelector('.tasks');
+    const newTodo = document.getElementById('task-info');
+    getAddedTodos();
+    addTaskDescription('task2', newTodo);
+    getAddedTodos();
+    addTaskDescription('task3', newTodo);
+    getAddedTodos();
+    const checkAtIndex = 1;
+    const checkbox = listSection.children[0].children[checkAtIndex].children[0].children[0];
+    checkbox.checked = true;
+    todo.completedTask(checkbox.checked, checkAtIndex);
+    expect(todo.allTasks[checkAtIndex-1].completed).toEqual(checkbox.checked);
+  });
 });

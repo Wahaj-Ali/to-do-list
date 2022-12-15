@@ -119,4 +119,3 @@ describe('This test checks clear completed tasks function', () => {
     expect(todo.allTasks.length).toEqual(2);
   });
 });
-

@@ -1,4 +1,4 @@
-import createMockDocument from "../mocks/mockDocument";
+import createMockDocument from '../mocks/mockDocument.js';
 
 describe('this test', () => {
 	test('creates a ul in the document to mock the actual html document', () => {

@@ -2,6 +2,7 @@ import getAddedTodos from '../../src/modules/newtask.js';
 import { todo } from '../../src/modules/displaytasks.js';
 import createMockDocument from '../mocks/mockDocument.js';
 import delTask from '../../src/modules/deltask.js';
+import clearCompletedTasks from '../../src/modules/clearCompletedTasks.js';
 
 function addTaskDescription(val, input) {
   input.value = val;

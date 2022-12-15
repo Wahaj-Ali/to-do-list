@@ -76,7 +76,7 @@ describe('This test', () => {
     const para1 = listSection.children[0].children[completedTaskIndex].children[0].children[1];
     para1.textContent = newDesc;
     todo.editTask(para1, completedTaskIndex);
-    expect(todo.allTasks[completedTaskIndex-1].description).toEqual(newDesc);
+    expect(todo.allTasks[completedTaskIndex - 1].description).toEqual(newDesc);
   });
 
   test('checks given item status', () => {
@@ -93,7 +93,7 @@ describe('This test', () => {
     const checkbox = listSection.children[0].children[checkAtIndex].children[0].children[0];
     checkbox.checked = true;
     todo.completedTask(checkbox.checked, checkAtIndex);
-    expect(todo.allTasks[checkAtIndex-1].completed).toEqual(checkbox.checked);
+    expect(todo.allTasks[checkAtIndex - 1].completed).toEqual(checkbox.checked);
   });
 
   test('clears completed tasks', () => {

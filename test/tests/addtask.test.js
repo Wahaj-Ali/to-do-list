@@ -33,16 +33,6 @@ describe('This test', () => {
     ).toEqual('itme-desc');
   });
 
-  test('should remove 1st task in the list container', () => {
-    todo.allTasks = [];
-    createMockDocument('task1');
-
-    const listSection = document.querySelector('.tasks');
-    getAddedTodos();
-    delTask(1);
-    expect(listSection.children.length).toEqual(0);
-  });
-
   test('adds the exact number of task elements to the list container ', () => {
     todo.allTasks = [];
     createMockDocument('task1');
@@ -58,8 +48,21 @@ describe('This test', () => {
       3,
     );
   });
+});
 
-  test('edits the 1st task description', () => {
+describe('This test checks delete task function', () => {
+test('remove 1st task in the list container', () => {
+  todo.allTasks = [];
+  createMockDocument('task1');
+  const listSection = document.querySelector('.tasks');
+  getAddedTodos();
+  delTask(1);
+  expect(listSection.children.length).toEqual(0);
+});
+});
+
+describe('This test checks the edit task function', () => {
+  test('edit the 1st task description', () => {
     todo.allTasks = [];
     createMockDocument('task1');
     const listSection = document.querySelector('.tasks');
@@ -76,8 +79,10 @@ describe('This test', () => {
     todo.editTask(para1, completedTaskIndex);
     expect(todo.allTasks[completedTaskIndex - 1].description).toEqual(newDesc);
   });
+});
 
-  test('checks given item status', () => {
+describe('This test checks the status of the task', () => {
+  test('checks given task status', () => {
     todo.allTasks = [];
     createMockDocument('task1');
     const listSection = document.querySelector('.tasks');
@@ -93,8 +98,10 @@ describe('This test', () => {
     todo.completedTask(checkbox.checked, checkAtIndex);
     expect(todo.allTasks[checkAtIndex - 1].completed).toEqual(checkbox.checked);
   });
+});
 
-  test('clears completed tasks', () => {
+describe('This test checks clear completed tasks function', () => {
+  test('clear completed tasks', () => {
     todo.allTasks = [];
     createMockDocument('task1');
     const listSection = document.querySelector('.tasks');
@@ -112,3 +119,4 @@ describe('This test', () => {
     expect(todo.allTasks.length).toEqual(2);
   });
 });
+

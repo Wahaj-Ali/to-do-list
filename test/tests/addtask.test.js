@@ -51,14 +51,14 @@ describe('This test', () => {
 });
 
 describe('This test checks delete task function', () => {
-test('remove 1st task in the list container', () => {
-  todo.allTasks = [];
-  createMockDocument('task1');
-  const listSection = document.querySelector('.tasks');
-  getAddedTodos();
-  delTask(1);
-  expect(listSection.children.length).toEqual(0);
-});
+  test('remove 1st task in the list container', () => {
+    todo.allTasks = [];
+    createMockDocument('task1');
+    const listSection = document.querySelector('.tasks');
+    getAddedTodos();
+    delTask(1);
+    expect(listSection.children.length).toEqual(0);
+  });
 });
 
 describe('This test checks the edit task function', () => {

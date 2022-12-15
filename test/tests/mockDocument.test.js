@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import createMockDocument from '../mocks/mockDocument.js';
 
 describe('this test', () => {

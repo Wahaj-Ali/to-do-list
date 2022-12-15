@@ -71,8 +71,6 @@ describe('This test', () => {
     getAddedTodos();
     const completedTaskIndex = 1;
     const newDesc = 'task1 edited';
-    // const descContainer = document.querySelector('#taskLabel');
-    // const para = listSection.children[0].children[completedTaskIndex].querySelector('#taskLabel');
     const para1 = listSection.children[0].children[completedTaskIndex].children[0].children[1];
     para1.textContent = newDesc;
     todo.editTask(para1, completedTaskIndex);
